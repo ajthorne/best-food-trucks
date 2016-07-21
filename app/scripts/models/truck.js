@@ -6,12 +6,17 @@ const Truck = Backbone.Model.extend({
     default: {
         name: '',
         cuisine: '',
-        dish: ''
+        dish: '',
+        img: ''
+        //does img default need to be a path?
     },
 
-    // parse: function(response) {
-    //
-    // }
+    parse: function(response) {
+      return {
+        //returns username so it can be pulled to identify who posted/created the entry
+      username: response.username
+    };
+  }
 });
 
 export default Truck;

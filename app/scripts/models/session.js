@@ -20,6 +20,4 @@ const Session = Backbone.Model.extend({
     }
 });
 
-let session = new Session();
-
-export default session;
+export default Session;

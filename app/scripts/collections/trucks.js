@@ -7,6 +7,4 @@ const Trucks = Backbone.Collection.extend({
   model: Truck
 });
 
-let trucksCollection = new Trucks();
-
-export default trucksCollection;
+export default Trucks;
