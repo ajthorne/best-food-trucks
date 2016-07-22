@@ -1,5 +1,6 @@
 import Backbone from 'backbone';
 import trucks from '../collections/trucks';
+import store from '../store';
 
 // Coop worked on this, might need to double check the create function below
 
@@ -8,24 +9,27 @@ const AddTruck = Backbone.View.extend({
   className: 'newTruck',
   template: function (){
     return `
-    <input type="text" placeholder="name of truck" value="">
-    <input type="checkbox" name="italian" value="Italian">
-    <input type="checkbox" name="chinese" value="Chinese">
-    <input type="checkbox" name="Thai" value="Thai">
-    <input type="checkbox" name="Greek" value="Greek">
-    <input type="checkbox" name="Mexican" value="Mexican">
-    <input type="checkbox" name="American" value="American">
-    <input type="checkbox" name="Latin" value="Latin">
-    <input type="checkbox" name="Dessert" value="Dessert">
-    <input type="checkbox" name="Vegan" value="Vegan">
-    <input type="checkbox" name="Vegeterian" value="Vegeterian">
-    <input type="checkbox" name="Brunch" value="Brunch">
-    <input type="checkbox" name="Coffee/Tea" value="Coffee/Tea">
-    <input type="checkbox" name="Cuban" value="Cuban">
-    <input type="checkbox" name="Vietnamese" value="Vietnamese">
-    <input type="checkbox" name="Gluten Free" value="Gluten Free">
-    <input type="text" name="other-type" placeholder="Type of Cuisine" value="">
+    <input type="text" name="truck-name" placeholder="name of truck" value="">
+    <select class="cuisine">
+      <option value="Italian"></option>
+      <option value="Chinese"></option>
+      <option value="Thai"></option>
+      <option value="Greek"></option>
+      <option value="Mexican"></option>
+      <option value="American"></option>
+      <option value="Latin"></option>
+      <option value="Dessert"></option>
+      <option value="Vegan"></option>
+      <option value="Vegetarian"></option>
+      <option value="Brunch"></option>
+      <option value="Coffee/Tea"></option>
+      <option value="Cuban"></option>
+      <option value="Vietnamese"></option>
+      <option value="Gluten Free"></option>
+      <option value="Other"></option>
+    </select>
     <input type="text" name="signature" placeholder="Signature Item" value="">
+    <textarea name="comment" placeholder="Write a description or review..."></textarea>
     <input class="submit" type="button" name="submit" value="Submit">
     `;
   },
@@ -37,7 +41,17 @@ const AddTruck = Backbone.View.extend({
     'click .submit' : 'addTruck',
   },
   addTruck: function (){
-    this.model = trucks.create(addTruck);
+    this.model = trucks.create({
+      name: this.$el.find(`[name='truck-name']`),
+      cuisine: this.$el.find('.cuisine').val(),
+      signature_item: this.$el.find(`[name='signature']`).val(),
+      comment: this.$el.find(`[name='comment']`).val(),
+      username: store.session.username
+    }, {
+      success: function(){
+
+    }});
+    // url:
   }
 });
 

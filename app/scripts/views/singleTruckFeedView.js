@@ -9,10 +9,7 @@ const SingleTruckFeed = Backbone.View.extend({
   template: function() {
 
     var toReturn = `
-    <div>
-      <img src="${this.model.get('truck_pic')}" />
-    </div>
-    <div>
+    <img src="${this.model.get('truck_pic')}" />
     <p class="individual-truck-name"><span>Name:</span> ${this.model.get('name')}</p>
     <p class="individual-truck-cuisine"><span>Cuisine: </span> ${this.model.get('cuisine')}</p>
     <p class="individual-truck-dish"><span> Signature Dish:</span> ${this.model.get('signature_item')}</p>
