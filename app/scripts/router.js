@@ -3,6 +3,7 @@ import Backbone from 'backbone';
 import nav from './views/nav';
 import trucksFeed from './views/truckFeedView';
 import SingleTruck from './views/singleTruckView';
+import store from "./store";
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -10,6 +11,7 @@ const Router = Backbone.Router.extend({
     truckfeed: 'truckFeedFunction',
     addtruck: 'addTruckFunction',
     'foodtrucks/:id': 'singleTruckFunction',
+    logout: 'logoutFunction',
     '/*': 'truckFeedFunction'
     //catch all to redirect user to home page
   },
@@ -27,6 +29,10 @@ const Router = Backbone.Router.extend({
 
   addTruckFunction: function(){
     $('.container').empty().append(nav.render().$el);
+  },
+  logoutFunction: function(){
+    store.session.clear();
+    this.navigate('truckfeed', {trigger: true});
   }
 });
 

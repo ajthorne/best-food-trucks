@@ -33,10 +33,11 @@ const SingleTruckFeed = Backbone.View.extend({
         //              <i class="fa fa-edit editBtn"></i>`;
         // }
 
-
     },
     events: {
         'click img': 'singleTruckFunction'
+    //need an event for voting/liking
+    // 'click .likeBtn': 'likeFunction',
 
         //need an event for voting/liking
         // 'click .likeBtn': 'likeFunction',
@@ -56,6 +57,18 @@ const SingleTruckFeed = Backbone.View.extend({
     //deleteFunction:  function () {
     // this.model.destroy()
     // }
+  //deleteFunction:  function () {
+  // this.model.destroy()
+  // }
+  likeFunction: function(){
+    if (store.session.favorites.indexOf(this.model.get('id')) === -1){
+      this.model.set('vote_count', this.model.get('vote_count') + 1);
+      store.session.favorites.push(this.model.get('id'));
+    } else {
+      alert('You already liked this!');
+    }
+
+  },
 
     render: function() {
         this.$el.html(this.template());

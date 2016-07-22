@@ -35,6 +35,14 @@ const TrucksFeed = Backbone.View.extend({
         truckFeed.render();
         this.$('.truck-feed-holder').append(truckFeed.$el);
   });
+    //forEach function needed to iterate over data stored
+    //store.trucksCollection.forEach((truck, i, arr) => {
+        // let truckFeed = new SingleTruckFeed({
+        //   model: truck
+        // });
+        // truckFeed.render();
+        // this.$('.truck-feed-holder').append(truckFeed.$el);
+  // });
 
     return this;
   }
