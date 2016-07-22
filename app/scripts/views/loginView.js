@@ -42,5 +42,4 @@ const LoginView = Backbone.View.extend({
 });
 
 const loginView = new LoginView();
-loginView.render();
 export default loginView;
