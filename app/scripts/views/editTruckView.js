@@ -8,37 +8,44 @@ const EditTruck = Backbone.View.extend({
   template: function (){
     return `
     <input type="text" name="truck-name" placeholder="name of truck" value="">
-    <input type="checkbox" name="italian" value="Italian">
-    <input type="checkbox" name="chinese" value="Chinese">
-    <input type="checkbox" name="Thai" value="Thai">
-    <input type="checkbox" name="Greek" value="Greek">
-    <input type="checkbox" name="Mexican" value="Mexican">
-    <input type="checkbox" name="American" value="American">
-    <input type="checkbox" name="Latin" value="Latin">
-    <input type="checkbox" name="Dessert" value="Dessert">
-    <input type="checkbox" name="Vegan" value="Vegan">
-    <input type="checkbox" name="Vegeterian" value="Vegeterian">
-    <input type="checkbox" name="Brunch" value="Brunch">
-    <input type="checkbox" name="Coffee/Tea" value="Coffee/Tea">
-    <input type="checkbox" name="Cuban" value="Cuban">
-    <input type="checkbox" name="Vietnamese" value="Vietnamese">
-    <input type="checkbox" name="Gluten Free" value="Gluten Free">
-    <input type="text" name="other-type" placeholder="Type of Cuisine" value="">
+    <select class="cuisine">
+      <option value="Italian">Italian</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Thai">Thai</option>
+      <option value="Greek">Greek</option>
+      <option value="Mexican">Mexican</option>
+      <option value="American">American</option>
+      <option value="Latin">Latin</option>
+      <option value="Dessert">Dessert</option>
+      <option value="Vegan">Vegan</option>
+      <option value="Vegetarian">Vegetarian</option>
+      <option value="Brunch">Brunch</option>
+      <option value="Coffee/Tea">Coffee/Tea</option>
+      <option value="Cuban">Cuban</option>
+      <option value="Vietnamese">Vietnamese</option>
+      <option value="Gluten Free">Gluten Free</option>
+      <option value="Other">Other</option>
+    </select>
     <input type="text" name="signature" placeholder="Signature Item" value="">
+    <textarea name="comment" placeholder="Write a description or review..."></textarea>
     <input class="submit" type="button" name="submit" value="Submit">
     `;
   },
   render: function (){
     this.$el.html(this.template());
-    this.$el.find(`[name=${this.model.get('cuisine')}]`).prop('checked', true);
+    this.$el.find('.cuisine').val(`${this.model.get('cuisine')}`);
     this.$el.find(`[name='truck-name']`).val(this.model.get('name'));
     this.$el.find(`[name='signature']`).val(this.model.get('signature_item'));
+    this.$el.find(`[name='comment']`).val(this.model.get('comment'));
   },
   events: {
-    'click .submit' : 'addTruck',
+    'click .submit' : 'editTruck',
   },
-  addTruck: function (){
-    this.model = trucks.create(addTruck);
+  editTruck: function (){
+    this.model.set('name', this.$el.find(`[name='truck-name']`));
+    this.model.set('cuisine', this.$el.find('.cuisine').val());
+    this.model.set('signature_item', this.$el.find(`[name='signature']`).val());
+    this.model.set('comment', this.$el.find(`[name='comment']`).val());
   }
 });
 
