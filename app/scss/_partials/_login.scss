@@ -1,0 +1,51 @@
+.login-container{
+  background: #F5F5F5;
+    opacity: .7;
+    width: 50%;
+    margin-left: 20%;
+    border: 1px black solid;
+    padding: 3vh 5%;
+    margin-top: 4vh;
+  }
+
+  .login-container h1{
+    font-size: 4rem;
+text-align: center;
+margin: 0;
+  }
+
+
+.user-login{
+  border: none;
+    background: #F9C89F;
+    padding: 1vh 11%;
+    font-size: 1.2rem;
+      margin-left: 35%
+}
+
+.new-login{
+border: none;
+    background: #F9C89F;
+    padding: 1vh 5%;
+    margin-left: 35%
+
+  }
+
+  .login-container input{
+    height:5vh;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+.user-name, .new-username{
+  width: 45%;
+}
+
+.user-password, .new-password{
+  width: 45%;
+}
+
+.login-container p{
+  text-align: center;
+  font-family: $copy-font;
+}
