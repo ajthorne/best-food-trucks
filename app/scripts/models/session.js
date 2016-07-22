@@ -17,6 +17,9 @@ const Session = Backbone.Model.extend({
                 //add id
             };
         }
+    },
+    login: function(username, password){
+      console.log(`user: ${username} password: ${password}`);
     }
 });
 

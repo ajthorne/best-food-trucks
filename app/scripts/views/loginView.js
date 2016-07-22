@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 import router from '../router';
+import store from '../store';
 
 const LoginView = Backbone.View.extend({
   tagName: 'div',
@@ -13,15 +14,13 @@ const LoginView = Backbone.View.extend({
     evt.preventDefault();
     let username = this.$('.user-name').val();
     let password = this.$('.user-password').val();
-    // session.login(username, password);
-    console.log(`user: ${username} password: ${password}`);
+    store.login(username, password);
+
   },
   signupFunction: function(evt){
     evt.preventDefault();
     let username = this.$('.new-username').val();
     let password = this.$('.new-password').val();
-    // session.login(username, password, <urlForNewUsers>); optional third argument?
-    // can show day-28 code as example, but this will require back-end functionality
     console.log(`user: ${username} password: ${password}`);
   },
   template: function(){

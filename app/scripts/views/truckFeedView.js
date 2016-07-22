@@ -35,7 +35,7 @@ const TrucksFeed = Backbone.View.extend({
         // });
         // truckFeed.render();
         // this.$('.truck-feed-holder').append(truckFeed.$el);
-  // })
+  // });
 
     return this;
   }
