@@ -6,17 +6,16 @@ import router from '../router';
 const SingleTruckFeed = Backbone.View.extend({
   tagName: 'li',
   className: 'individual-truck',
-  template: function () {
-    // let optionBtns = '';
-    // let likeBtn = '';
+  template: function() {
 
     var toReturn = `
-    <img src="#" />
-    <span class="individual-truck-name">Truck Name</span>
-    <span class="individual-truck-cuisine">Truck Cuisine</span>
-    <span class="individual-truck-dish">Truck Dish</span>
-    <span class="individual-truck-author">Truck Username</span>
-
+    <div>
+      <img src="${this.model.get('truck_pic')}" />
+    </div>
+    <div>
+      <span class="individual-truck-name">Name: ${this.model.get('name')}</span>
+      <span class="individual-truck-cuisine">Cuisine: ${this.model.get('cuisine')}</span>
+      <span class="individual-truck-dish">Signature Dish: ${this.model.get('signature_item')}</span>
     `;
     // removed, should be replaced by fa icons
     // <span class="individual-truck-options">Options Btns</span>
@@ -35,25 +34,30 @@ const SingleTruckFeed = Backbone.View.extend({
       toReturn += `<i class="fa fa-trash deleteBtn"></i>
                    <i class="fa fa-edit editBtn"></i>`;
     }
-
+    toReturn += `</div>`;
     return toReturn;
   },
-  events: {
-    //need an event for voting/liking
-    'click .likeBtn': 'likeFunction',
 
-    //need an event for deleting
+  events: {
+    'click img': 'singleTruckFunction',
+    'click .likeBtn': 'likeFunction',
     'click .deleteBtn': 'deleteFunction',
-    //
-    //need an event for editing
     'click .editBtn': 'editFunction'
   },
+
   editFunction: function(){
     router.navigate('edittruck', {trigger: true});
   },
+
   deleteFunction:  function () {
     this.model.destroy();
   },
+
+  singleTruckFunction: function (evt) {
+    console.log(this.model.get('id'));
+    router.navigate(`foodtrucks/${this.model.get('id')}`, {trigger: true});
+  },
+
   likeFunction: function(){
     if (store.session.favorites.indexOf(this.model.get('id')) === -1){
       this.model.set('vote_count', this.model.get('vote_count') + 1);
@@ -64,7 +68,7 @@ const SingleTruckFeed = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template());
+      this.$el.html(this.template());
 
   }
 });

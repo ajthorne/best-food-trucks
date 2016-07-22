@@ -1,5 +1,5 @@
 import Backbone from 'backbone';
-import trucks from './collections/trucks';
+import trucks from '../collections/trucks';
 
 // Coop worked on this, might need to double check the create function below
 
@@ -7,7 +7,7 @@ const AddTruck = Backbone.View.extend({
   tagName: 'div',
   className: 'newTruck',
   template: function (){
-    var toReturn = `
+    return `
     <input type="text" placeholder="name of truck" value="">
     <input type="checkbox" name="italian" value="Italian">
     <input type="checkbox" name="chinese" value="Chinese">
@@ -25,26 +25,15 @@ const AddTruck = Backbone.View.extend({
     <input type="checkbox" name="Vietnamese" value="Vietnamese">
     <input type="checkbox" name="Gluten Free" value="Gluten Free">
     <input type="text" placeholder="Type of Cuisine" value="">
+    <input class="submit" type="button" name="submit" value="Submit">
     `;
-
-    if (true){
-      toReturn += '<input class="make-edit" type="button" name="make-edit" value="Submit">';
-    } else {
-      toReturn += '<input class="submit" type="button" name="submit" value="Submit">';
-    }
-
-    return toReturn;
   },
-  render: function (editing){
-    this.$el.html(this.template(editing));
+  render: function (){
+    this.$el.html(this.template());
 
   },
   events: {
     'click .submit' : 'addTruck',
-    'click .make-edit' : 'editTruck'
-  },
-  editTruck: function(){
-
   },
   addTruck: function (){
     this.model = trucks.create(addTruck);

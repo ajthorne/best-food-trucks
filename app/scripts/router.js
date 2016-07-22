@@ -5,6 +5,9 @@ import trucksFeed from './views/truckFeedView';
 import store from './store';
 import loginView from './views/loginView';
 import addTruck from './views/addTruckView';
+import SingleTruck from './views/singleTruckView';
+import editTruck from './views/editTruckView';
+
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -12,6 +15,7 @@ const Router = Backbone.Router.extend({
     truckfeed: 'truckFeedFunction',
     addtruck: 'addTruckFunction',
     edittruck: 'editTruckFunction',
+    'foodtrucks/:id': 'singleTruckFunction',
     logout: 'logoutFunction',
     '/*': 'truckFeedFunction'
     //catch all to redirect user to home page
@@ -23,11 +27,17 @@ const Router = Backbone.Router.extend({
   truckFeedFunction: function(){
     $('.container').empty().append(nav.render().$el).append(trucksFeed.render().$el);
   },
+
+  singleTruckFunction: function (id) {
+    let singleTruck = new SingleTruck(id);
+    $('.container').empty().append(singleTruck.render().$el);
+  },
+
   addTruckFunction: function(){
     $('.container').empty().append(nav.render().$el).append(addTruck.render().$el);
   },
   editTruckFunction: function(){
-    $('.container').empty().append(nav.render().$el).append(addTruck.render(true).$el);
+    $('.container').empty().append(nav.render().$el).append(editTruck.render().$el);
   },
   logoutFunction: function(){
     store.session.clear();
