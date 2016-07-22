@@ -14,14 +14,14 @@ const LoginView = Backbone.View.extend({
     evt.preventDefault();
     let username = this.$('.user-name').val();
     let password = this.$('.user-password').val();
-    store.login(username, password);
+    store.session.login(username, password);
 
   },
   signupFunction: function(evt){
     evt.preventDefault();
     let username = this.$('.new-username').val();
     let password = this.$('.new-password').val();
-    console.log(`user: ${username} password: ${password}`);
+    store.session.signup(username, password);
   },
   template: function(){
     return `

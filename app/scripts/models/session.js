@@ -20,6 +20,9 @@ const Session = Backbone.Model.extend({
     },
     login: function(username, password){
       console.log(`user: ${username} password: ${password}`);
+    },
+    signup: function(username, password){
+      console.log(`new user: ${username} new password: ${password}`);
     }
 });
 
