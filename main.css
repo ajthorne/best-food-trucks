@@ -47,40 +47,36 @@ nav {
 .truck-feed h2 {
   text-align: center;
   width: 40%;
-  margin: -6vh 30%;
+  margin: -3vh 30% 3vh;
   background: white;
   font-size: 1.6rem;
   padding: 5vh 1% 1vh 1%; }
 
 ol {
+  display: inline-flex;
+  flex-wrap: wrap;
   width: 100%;
-  float: left;
-  margin-left: -30%; }
+  margin-left: 5%;
+  font-size: 1.4rem;
+  font-family: "PT Sans Narrow", sans-serif; }
 
-.truckPhoto {
-  float: left;
-  height: auto;
-  overflow: hidden; }
-
-.truckCopy {
-  text-align: start;
-  margin-left: 3%;
-  float: left; }
-
-.individual-truck {
-  float: left;
-  width: 136%;
-  padding: 4%;
-  background: -webkit-linear-gradient(#FBD283, #F5F5F5);
+li {
+  width: 35%;
+  padding: 2%;
+  margin-right: 4%;
+  background-color: #F5F5F5;
   margin-bottom: 3vh;
   opacity: .7;
-  border: 1px solid black; }
+  border: 1px solid black;
+  text-align: center; }
 
-p {
+.individual-truck p {
   line-height: .2;
-  font-weight: 100; }
+  font-weight: 100;
+  text-align: left;
+  margin-left: 17%; }
 
-p span {
+.individual-truck p span {
   font-weight: 900; }
 
 .backButton {
@@ -131,6 +127,48 @@ p span {
         text-decoration: underline;
         transform: scale(1.1);
         cursor: url("https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png"), auto; }
+
+.login-container {
+  background: #F5F5F5;
+  opacity: .7;
+  width: 50%;
+  margin-left: 20%;
+  border: 1px black solid;
+  padding: 3vh 5%;
+  margin-top: 4vh; }
+
+.login-container h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0; }
+
+.user-login {
+  border: none;
+  background: #F9C89F;
+  padding: 1vh 11%;
+  font-size: 1.2rem;
+  margin-left: 35%; }
+
+.new-login {
+  border: none;
+  background: #F9C89F;
+  padding: 1vh 5%;
+  margin-left: 35%; }
+
+.login-container input {
+  height: 5vh;
+  font-size: 1.2rem;
+  text-align: center; }
+
+.user-name, .new-username {
+  width: 45%; }
+
+.user-password, .new-password {
+  width: 45%; }
+
+.login-container p {
+  text-align: center;
+  font-family: "PT Sans Narrow", sans-serif; }
 
 h1 {
   font-family: "Amatic SC", cursive; }
