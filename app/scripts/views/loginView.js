@@ -14,6 +14,7 @@ const LoginView = Backbone.View.extend({
     let username = this.$('.user-name').val();
     let password = this.$('.user-password').val();
     // session.login(username, password);
+    console.log(`user: ${username} password: ${password}`);
   },
   signupFunction: function(evt){
     evt.preventDefault();
@@ -21,6 +22,7 @@ const LoginView = Backbone.View.extend({
     let password = this.$('.new-password').val();
     // session.login(username, password, <urlForNewUsers>); optional third argument?
     // can show day-28 code as example, but this will require back-end functionality
+    console.log(`user: ${username} password: ${password}`);
   },
   template: function(){
     return `
