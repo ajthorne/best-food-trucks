@@ -20,8 +20,8 @@ const TrucksFeed = Backbone.View.extend({
     return `
     <h1>Best of Austin Food Trucks</h1>
     <h2> Your vote matters. Sign in to vote for YOUR favorite truck.
-    <ul class="truck-feed-holder">
-    </ul>
+    <ol class="truck-feed-holder">
+    </ol>
     `;
   },
 
