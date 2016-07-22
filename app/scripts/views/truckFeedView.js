@@ -1,18 +1,18 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
-import trucksCollection from './store';
+// import trucksCollection from './store';
 import SingleTruckFeed from './singleTruckFeedView';
 
 const TrucksFeed = Backbone.View.extend({
-  initialize: function () {
-    store.trucksCollection.fetch();
-
-    store.trucksCollection.on('update', () => {
-      this.render();
+  // initialize: function () {
+  //   store.trucksCollection.fetch();
+  //
+  //   store.trucksCollection.on('update', () => {
+  //     this.render();
       //renders list of children to parent
       //updates whenever new information is added, removed, changed
-    });
-  },
+  //   });
+  // },
 
   tagName: 'section',
   //parent container for truck feed
@@ -42,4 +42,6 @@ const TrucksFeed = Backbone.View.extend({
 
 });
 
-export default TrucksFeed;
+let trucksFeed = new TrucksFeed ();
+
+export default trucksFeed;
