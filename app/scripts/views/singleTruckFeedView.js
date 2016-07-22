@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
+import store from "../store";
 
 const SingleTruckFeed = Backbone.View.extend({
   tagName: 'li',
@@ -32,7 +33,7 @@ const SingleTruckFeed = Backbone.View.extend({
     // }
 
 
-    },
+  },
   events: {
     //need an event for voting/liking
     // 'click .likeBtn': 'likeFunction',
@@ -47,6 +48,14 @@ const SingleTruckFeed = Backbone.View.extend({
   //deleteFunction:  function () {
   // this.model.destroy()
   // }
+  likeFunction: function(){
+    if (store.session.favorites.indexOf(this.model._id) > -1){
+      this.model.set('likes', this.model.get('likes') + 1);
+    } else {
+      alert('You already liked this!');
+    }
+
+  },
 
   render: function() {
     this.$el.html(this.template());
