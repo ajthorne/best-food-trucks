@@ -49,8 +49,9 @@ const SingleTruckFeed = Backbone.View.extend({
   // this.model.destroy()
   // }
   likeFunction: function(){
-    if (store.session.favorites.indexOf(this.model._id) > -1){
-      this.model.set('likes', this.model.get('likes') + 1);
+    if (store.session.favorites.indexOf(this.model.get('id')) === -1){
+      this.model.set('vote_count', this.model.get('vote_count') + 1);
+      store.session.favorites.push(this.model.get('id'));
     } else {
       alert('You already liked this!');
     }
