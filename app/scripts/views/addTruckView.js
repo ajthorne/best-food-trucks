@@ -24,7 +24,8 @@ const AddTruck = Backbone.View.extend({
     <input type="checkbox" name="Cuban" value="Cuban">
     <input type="checkbox" name="Vietnamese" value="Vietnamese">
     <input type="checkbox" name="Gluten Free" value="Gluten Free">
-    <input type="text" placeholder="Type of Cuisine" value="">
+    <input type="text" name="other-type" placeholder="Type of Cuisine" value="">
+    <input type="text" name="signature" placeholder="Signature Item" value="">
     <input class="submit" type="button" name="submit" value="Submit">
     `;
   },
