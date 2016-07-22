@@ -4,8 +4,21 @@ import store from '../store';
 
 const SingleTruck = Backbone.View.extend({
   initialize: function (id) {
+    if (!store.trucksCollection.get(id)) {
+      store.trucksCollection.add({id: id}
+      );
+      //if a user visits the page directly, it will be added to collection so that they may
+      //the content of that model
+    }
     this.model = store.trucksCollection.get(id);
+    console.log(this.model);
+    this.model.fetch();
+    this.model.on('change', () => {
+      //use change when adding
+      this.render();
+    });
   },
+
   tagName: 'div',
   className: 'single-truck',
   template: function () {
