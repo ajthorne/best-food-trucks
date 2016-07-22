@@ -27,6 +27,7 @@ const SingleTruck = Backbone.View.extend({
     <img src="${this.model.get('truck_pic')}">
     <span class="individual-truck-cuisine">Cuisine: ${this.model.get('cuisine')}</span>
     <span class="individual-truck-dish">Signature Dish: ${this.model.get('signature_item')}</span>
+    <p class="individual-truck-comment">${this.model.get('comment')}</p>
     <span>Find on </span><a href="${this.model.get('yelp_url')}" class="individual-truck-dish">Yelp!</a>`;
   },
 
