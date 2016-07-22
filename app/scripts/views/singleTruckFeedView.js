@@ -11,10 +11,14 @@ const SingleTruckFeed = Backbone.View.extend({
         // let likeBtn = '';
 
         return `
+    <div>
     <img src="${this.model.get('truck_pic')}" />
+    </div>
+    <div>
     <span class="individual-truck-name">Name: ${this.model.get('name')}</span>
     <span class="individual-truck-cuisine">Cuisine: ${this.model.get('cuisine')}</span>
     <span class="individual-truck-dish">Signature Dish: ${this.model.get('signature_item')}</span>
+    </div>
     `;
         // <span class="individual-truck-options">${optionsBtns}</span>
         // <span class="individual-truck-like">${likeBtn}</span>
