@@ -29,11 +29,11 @@ const LoginView = Backbone.View.extend({
     <h1>Log in</h1>
     <input class="user-name" type="text" placeholder="username" />
     <input class="user-password" type="password" placeholder="password" />
-    <button class="user-login">Log in</button>
+    <input class="user-login" type="button" value="Log in" />
     <p>Don't have an account? Sign up now!</p>
     <input class="new-username" type="text" placeholder="username" />
     <input class="new-password" type="password" placeholder="password" />
-    <button class="new-login">Create Account</button>
+    <input class="new-login" type="button" value="Create Account" />
     `;
   },
   render: function() {
@@ -42,4 +42,6 @@ const LoginView = Backbone.View.extend({
   }
 });
 
-export default LoginView;
+const loginView = new LoginView();
+loginView.render();
+export default loginView;
