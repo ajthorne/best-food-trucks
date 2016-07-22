@@ -7,7 +7,7 @@ const EditTruck = Backbone.View.extend({
   className: 'newTruck',
   template: function (){
     return `
-    <input type="text" placeholder="name of truck" value="">
+    <input type="text" name="truck-name" placeholder="name of truck" value="">
     <input type="checkbox" name="italian" value="Italian">
     <input type="checkbox" name="chinese" value="Chinese">
     <input type="checkbox" name="Thai" value="Thai">
@@ -31,7 +31,7 @@ const EditTruck = Backbone.View.extend({
   render: function (){
     this.$el.html(this.template());
     this.$el.find(`[name=${this.model.get('cuisine')}]`).prop('checked', true);
-    this.$el.find(`[name='other-type']`).val(this.model.get('name'));
+    this.$el.find(`[name='truck-name']`).val(this.model.get('name'));
     this.$el.find(`[name='signature']`).val(this.model.get('signature_item'));
   },
   events: {
