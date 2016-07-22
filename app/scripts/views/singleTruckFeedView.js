@@ -1,0 +1,57 @@
+import $ from 'jquery';
+import Backbone from 'backbone';
+
+const SingleTruckFeed = Backbone.View.extend({
+  tagName: 'li',
+  className: 'individual-truck',
+  template: function () {
+    // let optionBtns = '';
+    // let likeBtn = '';
+
+    return `
+    <img src="#" />
+    <span class="individual-truck-name">Truck Name</span>
+    <span class="individual-truck-cuisine">Truck Cuisine</span>
+    <span class="individual-truck-dish">Truck Dish</span>
+    <span class="individual-truck-author">Truck Username</span>
+    <span class="individual-truck-options">Options Btns</span>
+    <span class="individual-truck-like">Like Btn</span>
+    `;
+
+    //need to add vote/like button if user is logged in
+    //if (store.session.get('username') {
+      // likeBtn = `<i class="fa fa-star likeBtn"></i>`;
+  // })
+
+
+    //need to add delete/edit buttons if user created post
+    //will look something like this...
+    // if (store.session.get('username') === this.model.get('username')) {
+      //optionBtns = `<i class="fa fa-trash deleteBtn"></i>
+      //              <i class="fa fa-edit editBtn"></i>`;
+    // }
+
+
+    },
+  events: {
+    //need an event for voting/liking
+    // 'click .likeBtn': 'likeFunction',
+
+    //need an event for deleting
+    //'click .deleteBtn': 'deleteFunction',
+    //
+    //need an event for editing
+    //'click .editBtn': 'editFunction'
+  },
+
+  //deleteFunction:  function () {
+  // this.model.destroy()
+  // }
+
+  render: function() {
+    this.$el.html(this.template());
+
+  }
+});
+
+export default SingleTruckFeed;

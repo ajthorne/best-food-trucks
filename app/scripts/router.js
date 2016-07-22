@@ -6,7 +6,9 @@ const Router = Backbone.Router.extend({
   routes: {
     login: 'loginFunction',
     truckfeed: 'truckFeedFunction',
-    addtruck: 'addTruckFunction'
+    addtruck: 'addTruckFunction',
+    '/*': 'truckFeedFunction'
+    //catch all to redirect user to home page
   },
   loginFunction: function(){
   $('.container').empty().append(nav.render().$el);
