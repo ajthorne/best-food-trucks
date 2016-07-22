@@ -2,21 +2,21 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 
 const Truck = Backbone.Model.extend({
-    urlRoot: ``,
+    urlRoot: `https://warm-brook-49316.herokuapp.com/`,
     default: {
+        id: '',
         name: '',
         cuisine: '',
-        dish: '',
-        img: ''
-        //does img default need to be a path?
+        signature_item: '',
+        truck_pic: ''
     },
 
-    parse: function(response) {
-      return {
-        //returns username so it can be pulled to identify who posted/created the entry
-      username: response.username
-    };
-  }
+    // parse: function(response) {
+    //   return {
+    //     //returns username so it can be pulled to identify who posted/created the entry
+    //   username: response.username
+    // };
+  // }
 });
 
 export default Truck;
