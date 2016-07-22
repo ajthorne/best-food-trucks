@@ -23,12 +23,25 @@ const SingleTruck = Backbone.View.extend({
   className: 'single-truck',
   template: function () {
     return `
-    <h2 class="individual-truck-name">${this.model.get('name')}</h2>
-    <img src="${this.model.get('truck_pic')}">
-    <span class="individual-truck-cuisine">Cuisine: ${this.model.get('cuisine')}</span>
-    <span class="individual-truck-dish">Signature Dish: ${this.model.get('signature_item')}</span>
-    <span>Find on </span><a href="${this.model.get('yelp_url')}" class="individual-truck-dish">Yelp!</a>`;
+    <h2 class="single-truck-name">${this.model.get('name')}</h2>
+    <div class="single-truck-container">
+    <img class="single-truck-photo" src="${this.model.get('truck_pic')}">
+    <div class="single-truck-copy">
+    <p class="single-truck-cuisine"><span>Cuisine: </span>${this.model.get('cuisine')}</p>
+    <p class="single-truck-dish"><span>Signature Dish: </span>${this.model.get('signature_item')}</p>
+    <a href="${this.model.get('yelp_url')}" class="single-truck-yelp"><i class="fa fa-yelp"></i></a>
+    </div>
+    </div>`;
   },
+
+  //comment section to be added
+  // <span class="single-truck-dish">Signature Dish: ${this.model.get('comment')}</span>
+
+
+  //need to add events for like/vote, delete, editTruck
+  //need to add functions for each
+  //need icons for each --pull from truck feed view
+
 
   render: function () {
     this.$el.html(this.template());
