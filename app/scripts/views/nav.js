@@ -11,10 +11,11 @@ const Nav = Backbone.View.extend({
         <a class = "navButton"  href = "#truckfeed"> Logout </a>
         <a class = "navButton"  href = "#login"> Sign-Up</a>
         <a class = "navButton" href = "#login"> Login</a>
-
-
         `;
     },
+
+    // edit by James, routing to truckfeed will not run logout function
+
 
     render: function() {
         this.$el.html(this.template());
