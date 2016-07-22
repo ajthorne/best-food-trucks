@@ -23,7 +23,8 @@ const Router = Backbone.Router.extend({
     $('.container').empty().append(nav.render().$el);
   },
   logoutFunction: function(){
-
+    store.session.clear();
+    this.navigate('truckfeed', {trigger: true});
   }
 });
 
