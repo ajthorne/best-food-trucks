@@ -5,18 +5,20 @@ import Backbone from 'backbone';
 
 const Nav = Backbone.View.extend({
     tagName: 'nav',
-  template: function() {
-        return`
-        <a href ="#truckfeed"> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/745-200.png" alt="foodTruckLogo" /></a>
-        <a href = "#login"> Login</a>
-        <a href = "#login"> Sign-Up</a>
-        <a href = "#truckfeed"> Logout </a>
+    template: function() {
+        return `
+        <a href ="#truckfeed"> <img class = "truckLogo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/745-200.png" alt="foodTruckLogo" /></a>
+        <a class = "navButton"  href = "#truckfeed"> Logout </a>
+        <a class = "navButton"  href = "#login"> Sign-Up</a>
+        <a class = "navButton" href = "#login"> Login</a>
+
+
         `;
     },
 
-    render: function(){
-      this.$el.html(this.template());
-      return this;
+    render: function() {
+        this.$el.html(this.template());
+        return this;
     }
 });
 
