@@ -2,7 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 
 const Truck = Backbone.Model.extend({
-    urlRoot: `https://warm-brook-49316.herokuapp.com/`,
+    urlRoot: `https://warm-brook-49316.herokuapp.com/foodtrucks`,
     default: {
         id: '',
         name: '',
