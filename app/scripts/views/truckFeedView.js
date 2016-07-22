@@ -5,9 +5,9 @@ import SingleTruckFeed from './singleTruckFeedView';
 
 const TrucksFeed = Backbone.View.extend({
   initialize: function () {
-    trucksCollection.fetch();
+    store.trucksCollection.fetch();
 
-    trucksCollection.on('update', () => {
+    store.trucksCollection.on('update', () => {
       this.render();
       //renders list of children to parent
       //updates whenever new information is added, removed, changed
@@ -29,7 +29,7 @@ const TrucksFeed = Backbone.View.extend({
     this.$el.html(this.template());
 
     //forEach function needed to iterate over data stored
-    //trucksCollection.forEach((truck, i, arr) => {
+    //store.trucksCollection.forEach((truck, i, arr) => {
         // let truckFeed = new SingleTruckFeed({
         //   model: truck
         // });
