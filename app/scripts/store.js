@@ -5,7 +5,7 @@ let store = {
   session: new Session(),
   //access using store.session
 
-  // trucksCollection: new Trucks()
+  trucksCollection: new Trucks()
   //access using store.trucksCollection
 
 };
