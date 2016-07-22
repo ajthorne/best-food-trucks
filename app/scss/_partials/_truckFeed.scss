@@ -8,41 +8,33 @@ margin-bottom: 2vh;
 
 .truck-feed h2{
   text-align: center;
-width: 40%;
-margin: -6vh 30%;
-background: white;
-font-size: 1.6rem;
-padding: 5vh 1% 1vh 1%;
+  width: 40%;
+  margin: -3vh 30% 3vh;
+  background: white;
+  font-size: 1.6rem;
+  padding: 5vh 1% 1vh 1%;
 }
 
 ol{
-  width:100%;
-  float:left;
-  margin-left: -30%;
+display: inline-flex;
+flex-wrap: wrap;
+width: 100%;
+margin-left: 5%;
+
 }
 
-.truckPhoto{
-  float:left;
-  height:auto;
-  overflow: hidden;
+li{
+width: 35%;
+padding: 2%;
+margin-right: 4%;
+background: -webkit-linear-gradient( #FBD283,#F5F5F5);
+margin-bottom: 3vh;
+opacity: .7;
+border: 1px solid black;
+text-align: center;
+
 }
 
-.truckCopy{
-  text-align: start;
-  margin-left: 3%;
-  float:left;
-}
-
-.individual-truck{
-  float:left;
-    width:136%;
-    padding: 4%;
-    // background: #F5F5F5;
-    background: -webkit-linear-gradient( #FBD283,#F5F5F5);
-    margin-bottom: 3vh;
-    opacity: .7;
-    border: 1px solid black;
-}
 
 p {
   line-height: .2;
