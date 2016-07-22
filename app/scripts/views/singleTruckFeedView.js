@@ -4,66 +4,60 @@ import store from '../store';
 import router from '../router';
 
 const SingleTruckFeed = Backbone.View.extend({
-    tagName: 'li',
-    className: 'individual-truck',
-    template: function() {
-        // let optionBtns = '';
-        // let likeBtn = '';
+  tagName: 'li',
+  className: 'individual-truck',
+  template: function() {
 
-        return `
+    var toReturn = `
     <div>
-    <img src="${this.model.get('truck_pic')}" />
+      <img src="${this.model.get('truck_pic')}" />
     </div>
     <div>
-    <span class="individual-truck-name">Name: ${this.model.get('name')}</span>
-    <span class="individual-truck-cuisine">Cuisine: ${this.model.get('cuisine')}</span>
-    <span class="individual-truck-dish">Signature Dish: ${this.model.get('signature_item')}</span>
-    </div>
+    <p class="individual-truck-name"><span>Name:</span> ${this.model.get('name')}</p>
+    <p class="individual-truck-cuisine"><span>Cuisine: </span> ${this.model.get('cuisine')}</p>
+    <p class="individual-truck-dish"><span> Signature Dish:</span> ${this.model.get('signature_item')}</p>
     `;
-        // <span class="individual-truck-options">${optionsBtns}</span>
-        // <span class="individual-truck-like">${likeBtn}</span>
-        // <span class="individual-truck-author">Truck Username</span>
-
-        //need to add vote/like button if user is logged in
-        //if (store.session.get('username') {
-        // likeBtn = `<i class="fa fa-star likeBtn"></i>`;
-        // })
+    // removed, should be replaced by fa icons
+    // <span class="individual-truck-options">Options Btns</span>
+    // <span class="individual-truck-like">Like Btn</span>
 
 
-        //need to add delete/edit buttons if user created post
-        //will look something like this...
-        // if (store.session.get('username') === this.model.get('username')) {
-        //optionBtns = `<i class="fa fa-trash deleteBtn"></i>
-        //              <i class="fa fa-edit editBtn"></i>`;
-        // }
+    //need to add vote/like button if user is logged in
+    if (store.session.get('username')) {
+      toReturn += `<i class="fa fa-star likeBtn"></i>`;
+    }
 
-    },
-    events: {
-        'click img': 'singleTruckFunction'
-    //need an event for voting/liking
-    // 'click .likeBtn': 'likeFunction',
 
-        //need an event for voting/liking
-        // 'click .likeBtn': 'likeFunction',
+    //need to add delete/edit buttons if user created post
+    //will look something like this...
+    if (store.session.get('username') === this.model.get('username')) {
+      toReturn += `<i class="fa fa-trash deleteBtn"></i>
+                   <i class="fa fa-edit editBtn"></i>`;
+    }
+    toReturn += `</div>`;
+    return toReturn;
+  },
 
-        //need an event for deleting
-        //'click .deleteBtn': 'deleteFunction',
-        //
-        //need an event for editing
-        //'click .editBtn': 'editFunction'
-    },
+  events: {
+    'click img': 'singleTruckFunction',
+    'click .likeBtn': 'likeFunction',
+    'click .deleteBtn': 'deleteFunction',
+    'click .editBtn': 'editFunction'
+  },
 
-    singleTruckFunction: function (evt) {
-      console.log(this.model.get('id'));
-      router.navigate(`foodtrucks/${this.model.get('id')}`, {trigger: true});
-    },
+  editFunction: function(){
+    router.navigate('edittruck', {trigger: true});
+  },
 
-    //deleteFunction:  function () {
-    // this.model.destroy()
-    // }
-  //deleteFunction:  function () {
-  // this.model.destroy()
-  // }
+  deleteFunction:  function () {
+    this.model.destroy();
+  },
+
+  singleTruckFunction: function (evt) {
+    console.log(this.model.get('id'));
+    router.navigate(`foodtrucks/${this.model.get('id')}`, {trigger: true});
+  },
+
   likeFunction: function(){
     if (store.session.favorites.indexOf(this.model.get('id')) === -1){
       this.model.set('vote_count', this.model.get('vote_count') + 1);
@@ -71,13 +65,12 @@ const SingleTruckFeed = Backbone.View.extend({
     } else {
       alert('You already liked this!');
     }
-
   },
 
-    render: function() {
-        this.$el.html(this.template());
+  render: function() {
+      this.$el.html(this.template());
 
-    }
+  }
 });
 
 export default SingleTruckFeed;
