@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 import nav from './views/nav';
+import trucksFeed from './views/truckFeedView';
+
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -14,7 +16,7 @@ const Router = Backbone.Router.extend({
   $('.container').empty().append(nav.render().$el);
 },
   truckFeedFunction: function(){
-    $('.container').empty().append(nav.render().$el);
+    $('.container').empty().append(nav.render().$el).append(trucksFeed.render().$el);
   },
   addTruckFunction: function(){
     $('.container').empty().append(nav.render().$el);
