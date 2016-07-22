@@ -17,10 +17,6 @@ const SingleTruckFeed = Backbone.View.extend({
       <span class="individual-truck-cuisine">Cuisine: ${this.model.get('cuisine')}</span>
       <span class="individual-truck-dish">Signature Dish: ${this.model.get('signature_item')}</span>
     `;
-    // removed, should be replaced by fa icons
-    // <span class="individual-truck-options">Options Btns</span>
-    // <span class="individual-truck-like">Like Btn</span>
-
 
     //need to add vote/like button if user is logged in
     if (store.session.get('username')) {
