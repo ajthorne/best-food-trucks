@@ -16,9 +16,10 @@ const SingleTruckFeed = Backbone.View.extend({
     `;
 
     //need to add vote/like button if user is logged in
-    if (store.session.get('username')) {
+    if (store.session.get('username') !== '') {
       toReturn += `<i class="fa fa-thumbs-up likeBtn"></i>`;
     }
+    toReturn += `<input type="text" name="total-votes" value=${this.model.get('votes_count')} readonly />`;
 
 
     //need to add delete/edit buttons if user created post
@@ -53,7 +54,8 @@ const SingleTruckFeed = Backbone.View.extend({
 
   likeFunction: function(){
     if (store.session.favorites.indexOf(this.model.get('id')) === -1){
-      this.model.set('vote_count', this.model.get('vote_count') + 1);
+      this.model.set('votes_count', this.model.get('votes_count') + 1);
+      this.$el.find('[name="total-votes"]').val(this.model.get('votes_count'));
       store.session.favorites.push(this.model.get('id'));
     } else {
       alert('You already liked this!');
