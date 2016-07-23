@@ -34,8 +34,7 @@ nav {
 
 .container {
   background-image: url("http://d3d71ba2asa5oz.cloudfront.net/12018365/images/w793317%20-%20ceramica%20tiles__1.jpg");
-  background-size: inherit;
-  height: 1000vh; }
+  background-size: inherit; }
 
 .truck-feed h1 {
   font-size: 6rem;
@@ -94,9 +93,10 @@ li {
 .single-truck {
   text-align: center; }
   .single-truck .single-truck-name {
-    background: transparent;
+    background: white;
     text-align: center;
     font-weight: bold;
+    display: inline-block;
     font-size: 4rem;
     font-family: "Amatic SC", cursive; }
   .single-truck .single-truck-photo {
@@ -104,7 +104,7 @@ li {
     height: auto;
     overflow: hidden; }
   .single-truck .single-truck-container {
-    padding: 2%;
+    padding: 3%;
     background: #F5F5F5;
     margin: 0 auto;
     width: 60%;
@@ -120,12 +120,12 @@ li {
       .single-truck .single-truck-container .single-truck-copy .single-truck-yelp {
         float: right;
         text-decoration: none;
-        color: black;
+        color: #C21613;
         font-weight: bold;
         margin-right: 7%; }
       .single-truck .single-truck-container .single-truck-copy .single-truck-yelp:hover {
         text-decoration: underline;
-        transform: scale(1.1);
+        transform: scale(1.2);
         cursor: url("https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png"), auto; }
 
 .login-container {
@@ -169,6 +169,26 @@ li {
 .login-container p {
   text-align: center;
   font-family: "PT Sans Narrow", sans-serif; }
+
+footer {
+  width: 100%;
+  font-family: "PT Sans Narrow", sans-serif;
+  opacity: 0.7;
+  height: 15vh;
+  background: -webkit-linear-gradient(#F28164, #FBD283);
+  border-top: 1px solid black;
+  text-align: center;
+  padding-top: 2%;
+  margin-top: 10%; }
+  footer .copyright {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1.1rem; }
+  footer a {
+    text-decoration: none; }
+  footer .tiy-logo {
+    width: 4%;
+    margin-left: 1%; }
 
 h1 {
   font-family: "Amatic SC", cursive; }
