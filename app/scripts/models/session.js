@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
+import router from '../router';
 
 const Session = Backbone.Model.extend({
     urlRoot: `https://warm-brook-49316.herokuapp.com/sign-in`,
@@ -32,7 +33,6 @@ const Session = Backbone.Model.extend({
                 this.unset('password');
                 window.localStorage.setItem('authtoken', '906aafeeb8f54577bc398fbcbcb39b77');
                 router.navigate('truckfeed', {trigger: true});
-                location.hash ='truckfeed';
             }
 
         });
