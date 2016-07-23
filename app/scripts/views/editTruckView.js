@@ -33,7 +33,7 @@ const EditTruck = Backbone.View.extend({
   },
   render: function (){
     this.$el.html(this.template());
-    this.$el.find('.cuisine').val(`${this.model.get('cuisine')}`);
+    this.$el.find('.cuisine').val(this.model.get('cuisine'));
     this.$el.find(`[name='truck-name']`).val(this.model.get('name'));
     this.$el.find(`[name='signature']`).val(this.model.get('signature_item'));
     this.$el.find(`[name='comment']`).val(this.model.get('comment'));
