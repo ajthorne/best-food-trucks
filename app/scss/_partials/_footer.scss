@@ -1,0 +1,28 @@
+
+
+footer {
+  width:100%;
+  font-family:$copy-font;
+  opacity: 0.7;
+  height:15vh;
+  background: -webkit-linear-gradient(#F28164, #FBD283);
+  border-top: 1px solid black;
+  text-align: center;
+  padding-top: 2%;
+  margin-top: 10%;
+
+  .copyright {
+    display:inline-block;
+    vertical-align: bottom;
+    font-size: 1.1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .tiy-logo {
+    width: 4%;
+    margin-left: 1%;
+  }
+}
