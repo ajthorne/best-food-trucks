@@ -7,7 +7,7 @@ import loginView from './views/loginView';
 import addTruck from './views/addTruckView';
 import SingleTruck from './views/singleTruckView';
 import editTruck from './views/editTruckView';
-
+import singleTruckNav from './views/singleTruckNavView';
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -30,7 +30,7 @@ const Router = Backbone.Router.extend({
 
   singleTruckFunction: function (id) {
     let singleTruck = new SingleTruck(id);
-    $('.container').empty().append(singleTruck.render().$el);
+    $('.container').empty().append(singleTruckNav.render().$el).append(singleTruck.render().$el);
   },
 
   addTruckFunction: function(){

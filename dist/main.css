@@ -83,6 +83,55 @@ li {
   width: 70%;
   height: 32vh; }
 
+.backButton {
+  float: right;
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  margin: 4vh 2% 0 0;
+  padding: 5px; }
+
+.backButton:hover {
+  transform: scale(1.1);
+  cursor: url("https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png"), auto; }
+
+.single-truck {
+  text-align: center; }
+  .single-truck .single-truck-name {
+    background: transparent;
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+    font-family: "Amatic SC", cursive; }
+  .single-truck .single-truck-photo {
+    width: 85%;
+    height: auto;
+    overflow: hidden; }
+  .single-truck .single-truck-container {
+    padding: 2%;
+    background: #F5F5F5;
+    margin: 0 auto;
+    width: 60%;
+    opacity: 0.7;
+    border: 1px solid black; }
+    .single-truck .single-truck-container .single-truck-copy {
+      font-size: 1.3rem;
+      line-height: 0.2;
+      text-align: left;
+      margin-left: 7%; }
+      .single-truck .single-truck-container .single-truck-copy span {
+        font-weight: bold; }
+      .single-truck .single-truck-container .single-truck-copy .single-truck-yelp {
+        float: right;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin-right: 7%; }
+      .single-truck .single-truck-container .single-truck-copy .single-truck-yelp:hover {
+        text-decoration: underline;
+        transform: scale(1.1);
+        cursor: url("https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png"), auto; }
+
 .login-container {
   background: #F5F5F5;
   opacity: .7;

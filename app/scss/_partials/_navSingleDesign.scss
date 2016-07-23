@@ -1,0 +1,13 @@
+.backButton{
+float: right;
+text-decoration: none;
+font-size: 2rem;
+color: black;
+margin: 4vh 2% 0 0;
+padding: 5px;
+}
+
+.backButton:hover {
+  transform: scale(1.1);
+  cursor: url('https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png'), auto;
+}
