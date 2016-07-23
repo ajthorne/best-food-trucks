@@ -30,7 +30,7 @@ const SingleTruck = Backbone.View.extend({
     <div class="single-truck-copy">
     <p class="single-truck-cuisine"><span>Cuisine: </span>${this.model.get('cuisine')}</p>
     <p class="single-truck-dish"><span>Signature Dish: </span>${this.model.get('signature_item')}</p>
-    <a href="${this.model.get('yelp_url')}" class="single-truck-yelp"><i class="fa fa-yelp"></i></a>
+    <a href="${this.model.get('yelp_url')}" class="single-truck-yelp" title="Visit us on yelp!"><i class="fa fa-yelp"></i></a>
     </div>
     </div>`;
 
