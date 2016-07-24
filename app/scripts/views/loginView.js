@@ -42,6 +42,14 @@ const LoginView = Backbone.View.extend({
     this.$el.html(this.template());
     return this;
   }
+
+});
+store.userCollection.fetch({
+  success: function (response){
+    console.log(response.where({
+          username: 'Amanda1'
+    }));
+  }
 });
 
 const loginView = new LoginView();
