@@ -93,6 +93,9 @@ li {
   font-weight: 900;
   font-family: "Amatic SC", cursive; }
 
+.navArrow {
+  text-align: center; }
+
 .backButton {
   float: right;
   text-decoration: none;
