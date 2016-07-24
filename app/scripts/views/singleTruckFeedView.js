@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import store from '../store';
 import router from '../router';
+import users from '../collections/users';
 
 const SingleTruckFeed = Backbone.View.extend({
   tagName: 'li',
@@ -24,7 +25,7 @@ const SingleTruckFeed = Backbone.View.extend({
 
     //need to add delete/edit buttons if user created post
     //will look something like this...
-    if (store.session.get('username') === this.model.get('username')) {
+    if (store.session.get('username') === this.model.get('user_id')) {
       toReturn += `<i class="fa fa-trash deleteBtn"></i>
                    <i class="fa fa-edit editBtn"></i>`;
     }
