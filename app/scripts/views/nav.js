@@ -20,6 +20,8 @@ const Nav = Backbone.View.extend({
       }
       return toReturn;
 },
+
+
     // edit by James, routing to truckfeed will not run logout function
 
 

@@ -63,6 +63,7 @@ const Router = Backbone.Router.extend({
         this.navigate('truckfeed', {
             trigger: true
         });
+
     }
 });
 
