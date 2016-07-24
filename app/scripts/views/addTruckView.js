@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
 import trucks from '../collections/trucks';
 import store from '../store';
+import router from '../router';
 
 // Coop worked on this, might need to double check the create function below
 
@@ -44,14 +45,14 @@ const AddTruck = Backbone.View.extend({
   },
   addTruck: function (){
     this.model = store.trucksCollection.create({
-      name: this.$el.find(`[name='truck-name']`),
+      name: this.$el.find(`[name='truck-name']`).val(),
       cuisine: this.$el.find('.cuisine').val(),
       signature_item: this.$el.find(`[name='signature']`).val(),
-      comment: this.$el.find(`[name='comment']`).val(),
+      comments: this.$el.find(`[name='comment']`).val(),
       username: store.session.username
     }, {
       success: function(){
-
+      router.navigate('truckfeed', {trigger: true});
     }});
     // url:
   }
