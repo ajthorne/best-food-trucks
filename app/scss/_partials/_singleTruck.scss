@@ -24,6 +24,7 @@
         opacity: 0.7;
         border: 1px solid black;
         .single-truck-copy {
+            position: relative;
             font-size: 1.3rem;
             line-height: 0.2;
             text-align: left;
@@ -32,10 +33,14 @@
                 font-weight: bold;
             }
 
+
             .single-truck-yelp {
-                float: right;
+                position: absolute;
+                right: 5%;
+                top: 80%;
                 text-decoration: none;
                 color: #C21613;
+                font-size: 2rem;
                 font-weight: bold;
                 margin-right: 7%;
             }
@@ -46,5 +51,12 @@
                 cursor: url('https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png'), auto;
             }
         }
+    }
+
+    .likeBtn {
+      position: absolute;
+      right: 5%;
+      top: 80%;
+      font-size: 2rem;
     }
 }

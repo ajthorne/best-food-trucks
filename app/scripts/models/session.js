@@ -31,7 +31,7 @@ const Session = Backbone.Model.extend({
         }, {
             success: (model, response) => {
                 this.unset('password');
-                window.localStorage.setItem('authtoken', '906aafeeb8f54577bc398fbcbcb39b77');
+                window.localStorage.setItem('authtoken', response.auth_token);
                 router.navigate('truckfeed', {trigger: true});
                 console.log("YOU ARE LOGGED IN BIATCH");
             }
