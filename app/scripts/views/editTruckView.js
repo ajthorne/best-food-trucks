@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import trucks from '../collections/trucks';
 import store from '../store';
+import router from '../router';
 
 const EditTruck = Backbone.View.extend({
   // copied from singleTruckView, should be the same principle
@@ -62,10 +63,11 @@ const EditTruck = Backbone.View.extend({
     'click .submit' : 'editTruck',
   },
   editTruck: function (){
-    this.model.set('name', this.$el.find(`[name='truck-name']`));
+    this.model.set('name', this.$el.find(`[name='truck-name']`).val());
     this.model.set('cuisine', this.$el.find('.cuisine').val());
     this.model.set('signature_item', this.$el.find(`[name='signature']`).val());
     this.model.set('comment', this.$el.find(`[name='comment']`).val());
+    router.navigate('truckfeed', {trigger: true});
   }
 });
 

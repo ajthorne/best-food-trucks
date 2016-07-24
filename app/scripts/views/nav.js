@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
-import session from '../models/session';
 import store from '../store';
 
 // Coop worked on this. This page shows the log in, sign up, logout and home page
