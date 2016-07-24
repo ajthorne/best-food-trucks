@@ -29,7 +29,6 @@ const Router = Backbone.Router.extend({
 
     },
     truckFeedFunction: function() {
-        console.log(store.userCollection);
         $('.container').empty()
         .append(nav.render().$el)
         .append(trucksFeed.render().$el)
@@ -61,7 +60,6 @@ const Router = Backbone.Router.extend({
     },
     logoutFunction: function() {
         store.session.clear();
-        console.log(store.session);
         this.navigate('truckfeed', {
             trigger: true
         });
