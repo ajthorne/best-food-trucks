@@ -126,6 +126,7 @@ li {
     opacity: 0.7;
     border: 1px solid black; }
     .single-truck .single-truck-container .single-truck-copy {
+      position: relative;
       font-size: 1.3rem;
       line-height: 0.2;
       text-align: left;
@@ -133,15 +134,23 @@ li {
       .single-truck .single-truck-container .single-truck-copy span {
         font-weight: bold; }
       .single-truck .single-truck-container .single-truck-copy .single-truck-yelp {
-        float: right;
+        position: absolute;
+        right: 5%;
+        top: 80%;
         text-decoration: none;
         color: #C21613;
+        font-size: 2rem;
         font-weight: bold;
         margin-right: 7%; }
       .single-truck .single-truck-container .single-truck-copy .single-truck-yelp:hover {
         text-decoration: underline;
         transform: scale(1.2);
         cursor: url("https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png"), auto; }
+  .single-truck .likeBtn {
+    position: absolute;
+    right: 5%;
+    top: 80%;
+    font-size: 2rem; }
 
 .login-container {
   background: #F5F5F5;
@@ -233,6 +242,43 @@ footer {
   text-align: center;
   margin: 0; }
 
+@media (max-width: 480px) {
+  .backButton,
+  .navButton {
+    font-size: 1.3rem; }
+
+  .truck-feed h1 {
+    font-size: 4rem; }
+
+  .truck-feed h2 {
+    font-size: 1.5rem; }
+
+  ol {
+    display: block;
+    font-size: 1.2rem;
+    margin-left: 2%; }
+
+  li {
+    width: 81%; }
+
+  #votes {
+    display: initial;
+    font-weight: 900;
+    margin-left: 70%;
+    font-family: "Amatic SC", cursive; }
+
+  #numberVotes {
+    width: 5%;
+    font-weight: 900;
+    font-family: "Amatic SC", cursive; }
+
+  footer .copyright {
+    vertical-align: inherit; }
+
+  .single-truck .single-truck-container {
+    width: 85%; }
+    .single-truck .single-truck-container .single-truck-copy {
+      font-size: 1.2rem; } }
 h1 {
   font-family: "Amatic SC", cursive; }
 
