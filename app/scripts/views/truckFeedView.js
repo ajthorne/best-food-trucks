@@ -22,6 +22,7 @@ const TrucksFeed = Backbone.View.extend({
     <h2> Your vote matters. Sign in to vote for YOUR favorite truck.</h2>
     <ol class="truck-feed-holder">
     </ol>
+    <p class="navArrow" ><i class="fa fa-arrow-left left" aria-hidden="true"></i> Previous Page |  Next Page <i class="fa fa-arrow-right right" aria-hidden="true"></i></p>
     `;
   },
 
