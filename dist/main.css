@@ -152,7 +152,7 @@ li {
   .single-truck .likeBtn {
     position: absolute;
     right: 5%;
-    top: 80%;
+    bottom: -10%;
     font-size: 2rem; }
 
 .login-container {

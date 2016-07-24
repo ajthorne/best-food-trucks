@@ -37,21 +37,25 @@ const Session = Backbone.Model.extend({
                   trigger: true
               });
           }
-
       });
-
   },
   signup: function(username, password) {
-    this.save({
+    users.create({
       username: username,
       password: password
-      }, {
+    }, {
+      url: `https://warm-brook-49316.herokuapp.com/sign-up`,
       success: (model, response) => {
           this.unset('password');
           window.localStorage.setItem('authtoken', response.auth_token);
           console.log(response);
+          console.log('YOU DID IT!! YOU SIGNED UP!!!');
           router.navigate('truckfeed', {trigger: true});
-      }
+        },
+        error: (response) => {
+          console.log(response);
+          console.log('FAILED TO SIGN UP');
+        }
     });
   }
 });
