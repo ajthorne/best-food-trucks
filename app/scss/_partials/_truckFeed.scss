@@ -53,6 +53,20 @@ text-align: center;
   height: 32vh;
 }
 
+#votes{
+  display: initial;
+  font-weight: 900;
+  margin-left: 80%;
+font-family: $header-font;
+
+}
+
+#numberVotes {
+  width: 5%;
+  font-weight: 900;
+  font-family: $header-font;
+}
+
 
 // list stylings
 // li{
