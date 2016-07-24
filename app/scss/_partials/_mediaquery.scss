@@ -1,0 +1,46 @@
+@media (max-width: 480px) {
+    .backButton,
+    .navButton {
+        font-size: 1.3rem;
+    }
+    .truck-feed h1 {
+        font-size: 4rem;
+    }
+    .truck-feed h2 {
+        font-size: 1.5rem;
+    }
+    ol {
+        display: block;
+        font-size: 1.2rem;
+        margin-left: 2%;
+    }
+    li {
+        width: 81%;
+    }
+    #votes {
+        display: initial;
+        font-weight: 900;
+        margin-left: 70%;
+        font-family: $header-font;
+    }
+    #numberVotes {
+        width: 5%;
+        font-weight: 900;
+        font-family: $header-font;
+    }
+    footer {
+        .copyright {
+            vertical-align: inherit;
+        }
+    }
+
+    .single-truck {
+
+    .single-truck-container {
+        width: 85%;
+        .single-truck-copy {
+            font-size: 1.2rem;
+            }
+      }
+    }
+}
