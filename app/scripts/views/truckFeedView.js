@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import store from '../store';
 import SingleTruckFeed from './singleTruckFeedView';
+import router from '../router';
 
 const TrucksFeed = Backbone.View.extend({
   initialize: function () {
@@ -25,7 +26,14 @@ const TrucksFeed = Backbone.View.extend({
     <p class="navArrow" ><i class="fa fa-arrow-left left" aria-hidden="true"></i> Previous Page |  Next Page <i class="fa fa-arrow-right right" aria-hidden="true"></i></p>
     `;
   },
+  events: {
+    'click .right': 'arrowFunction'
+  },
 
+  arrowFunction: function (num) {
+    // router.navigate(`foodtrucks?page=${num}`, {trigger: true});
+
+  },
   render: function () {
     this.$el.html(this.template());
 

@@ -17,6 +17,7 @@ const Router = Backbone.Router.extend({
         addtruck: 'addTruckFunction',
         'edittruck/:id': 'editTruckFunction',
         'foodtrucks/:id': 'singleTruckFunction',
+        'foodtrucks?page=:num': 'nextPageFunction',
         logout: 'logoutFunction',
         '/*': 'truckFeedFunction'
             //catch all to redirect user to home page
@@ -42,6 +43,10 @@ const Router = Backbone.Router.extend({
         .append(singleTruckNav.render().$el)
         .append(singleTruck.render().$el)
         .append(footer.render().$el);
+    },
+
+    nextPageFunction: function(num) {
+      
     },
 
     addTruckFunction: function() {
