@@ -29,6 +29,7 @@ const Router = Backbone.Router.extend({
 
     },
     truckFeedFunction: function() {
+        console.log(store.userCollection);
         $('.container').empty()
         .append(nav.render().$el)
         .append(trucksFeed.render().$el)
