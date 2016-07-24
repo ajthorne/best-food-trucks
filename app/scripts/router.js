@@ -6,7 +6,7 @@ import store from './store';
 import loginView from './views/loginView';
 import addTruck from './views/addTruckView';
 import SingleTruck from './views/singleTruckView';
-import editTruck from './views/editTruckView';
+import EditTruck from './views/editTruckView';
 import singleTruckNav from './views/singleTruckNavView';
 import footer from './views/footerView';
 
@@ -15,7 +15,7 @@ const Router = Backbone.Router.extend({
         login: 'loginFunction',
         truckfeed: 'truckFeedFunction',
         addtruck: 'addTruckFunction',
-        edittruck: 'editTruckFunction',
+        'edittruck/:id': 'editTruckFunction',
         'foodtrucks/:id': 'singleTruckFunction',
         logout: 'logoutFunction',
         '/*': 'truckFeedFunction'
@@ -51,7 +51,8 @@ const Router = Backbone.Router.extend({
         .append(footer.render().$el);
 
     },
-    editTruckFunction: function() {
+    editTruckFunction: function(id) {
+        let editTruck = new EditTruck(id);
         $('.container').empty()
         .append(nav.render().$el)
         .append(editTruck.render().$el)

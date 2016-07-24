@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 import store from '../store';
+import router from '../router';
 
 const SingleTruck = Backbone.View.extend({
   initialize: function (id) {
@@ -60,11 +61,12 @@ const SingleTruck = Backbone.View.extend({
   },
 
   editFunction: function(){
-    router.navigate('edittruck', {trigger: true});
+    router.navigate(`edittruck/${this.model.get('id')}`, {trigger: true});
   },
 
   deleteFunction:  function () {
     this.model.destroy();
+    router.navigate('truckfeed', {trigger: true});
   },
 
   likeFunction: function(){

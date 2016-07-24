@@ -1,8 +1,26 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 import trucks from '../collections/trucks';
+import store from '../store';
 
 const EditTruck = Backbone.View.extend({
+  // copied from singleTruckView, should be the same principle
+  initialize: function (id) {
+    if (!store.trucksCollection.get(id)) {
+      store.trucksCollection.add({id: id}
+      );
+      //if a user visits the page directly, it will be added to collection so that they may
+      //the content of that model
+    }
+    this.model = store.trucksCollection.get(id);
+    console.log(this.model);
+    this.model.fetch();
+    this.model.on('change', () => {
+      //use change when adding
+      this.render();
+    });
+  },
+
   tagName: 'div',
   className: 'newTruck',
   template: function (){
@@ -32,11 +50,13 @@ const EditTruck = Backbone.View.extend({
     `;
   },
   render: function (){
+    console.log(this.model); // undefined
     this.$el.html(this.template());
     this.$el.find('.cuisine').val(this.model.get('cuisine'));
     this.$el.find(`[name='truck-name']`).val(this.model.get('name'));
     this.$el.find(`[name='signature']`).val(this.model.get('signature_item'));
     this.$el.find(`[name='comment']`).val(this.model.get('comment'));
+    return this;
   },
   events: {
     'click .submit' : 'editTruck',
@@ -49,6 +69,4 @@ const EditTruck = Backbone.View.extend({
   }
 });
 
-let editTruck = new EditTruck();
-
-export default editTruck;
+export default EditTruck;
