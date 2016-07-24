@@ -60,9 +60,11 @@ const Router = Backbone.Router.extend({
     },
     logoutFunction: function() {
         store.session.clear();
+        console.log(store.session);
         this.navigate('truckfeed', {
             trigger: true
         });
+
     }
 });
 
