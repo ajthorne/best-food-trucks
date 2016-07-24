@@ -1,28 +1,29 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 import router from '../router';
-import users from '../collections/users';
+// import users from '../collections/users';
+import store from '../store';
 
 const Session = Backbone.Model.extend({
   urlRoot: `https://warm-brook-49316.herokuapp.com/sign-in`,
   defaults: {
-      username: '',
+  username: '',
 
   },
 
-  // parse: function(response) {
-  //   //when data is returned from server, keep track of the things below to pull later
-  //   if (response) {
-  //     return {
-  //       username: response.username,
-  //       // edit by James, set authtoken, userId, and favorites array for this session
-  //       authtoken: response._kmd.authtoken,
-  //       userId: response._id,
-  //       favorites: response.favorites
-  //
-  //     };
-  //   }
-  // },
+  parse: function(response) {
+    //when data is returned from server, keep track of the things below to pull later
+    if (response) {
+      return {
+        username: response.username,
+        // edit by James, set authtoken, userId, and favorites array for this session
+        authtoken: response.authtoken,
+        // userId: response._id,
+        // favorites: response.favorites
+
+      };
+    }
+  },
 
   // will change when BE-FE connection is established
   login: function(username, password) {
@@ -40,7 +41,7 @@ const Session = Backbone.Model.extend({
       });
   },
   signup: function(username, password) {
-    users.create({
+    store.userCollection.create({
       username: username,
       password: password
     }, {
