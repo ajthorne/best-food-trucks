@@ -43,7 +43,7 @@ const AddTruck = Backbone.View.extend({
     'click .submit' : 'addTruck',
   },
   addTruck: function (){
-    this.model = trucks.create({
+    this.model = store.trucksCollection.create({
       name: this.$el.find(`[name='truck-name']`),
       cuisine: this.$el.find('.cuisine').val(),
       signature_item: this.$el.find(`[name='signature']`).val(),

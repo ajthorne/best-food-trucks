@@ -82,6 +82,17 @@ li {
   width: 70%;
   height: 32vh; }
 
+#votes {
+  display: initial;
+  font-weight: 900;
+  margin-left: 80%;
+  font-family: "Amatic SC", cursive; }
+
+#numberVotes {
+  width: 5%;
+  font-weight: 900;
+  font-family: "Amatic SC", cursive; }
+
 .backButton {
   float: right;
   text-decoration: none;

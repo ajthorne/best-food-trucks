@@ -19,7 +19,7 @@ const SingleTruckFeed = Backbone.View.extend({
     if (store.session.get('username') !== '') {
       toReturn += `<i class="fa fa-thumbs-up likeBtn"></i>`;
     }
-    toReturn += `<input type="text" name="total-votes" value=${this.model.get('votes_count')} readonly />`;
+    toReturn += `<p id="votes"> VOTES </p><input id="numberVotes" type="text" name="total-votes" value=${this.model.get('votes_count')} readonly />`;
 
 
     //need to add delete/edit buttons if user created post
