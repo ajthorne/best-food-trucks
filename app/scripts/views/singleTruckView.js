@@ -46,7 +46,7 @@ const SingleTruck = Backbone.View.extend({
     toReturn += `<i class="fa fa-thumbs-up likeBtn"></i>`;
   }
 
-  if (store.session.get('username') === this.model.get('username')) {
+  if (store.session.get('username') === this.model.get('user_id')) {
     toReturn += `<i class="fa fa-trash deleteBtn"></i>
                  <i class="fa fa-edit editBtn"></i>`;
   }
@@ -70,6 +70,7 @@ const SingleTruck = Backbone.View.extend({
   },
 
   likeFunction: function(){
+    // replace store.session.favorites
     if (store.session.favorites.indexOf(this.model.get('id')) === -1){
       this.model.set('vote_count', this.model.get('vote_count') + 1);
       store.session.favorites.push(this.model.get('id'));

@@ -10,15 +10,14 @@ const Nav = Backbone.View.extend({
     template: function() {
       let toReturn = `
         <a href ="#truckfeed"> <img class = "truckLogo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/745-200.png" alt="foodTruckLogo" /></a>
-        <a class = "navButton"  href = "#truckfeed"> Logout </a>
+        <a class = "navButton"  href = "#logout"> Logout </a>
         <a class = "navButton"  href = "#login"> Sign-Up</a>
         <a class = "navButton" href = "#login"> Login</a>
         `;
-
     if (store.session.get('username')) {
       toReturn += `<a class = "navButton" href = "#addtruck"> Add Truck</a>`;
-      }
-      return toReturn;
+    }
+    return toReturn;
 },
 
 
