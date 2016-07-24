@@ -7,5 +7,4 @@ const Users = Backbone.Collection.extend({
   model: User
 });
 
-const users = new Users();
-export default users;
+export default Users;
