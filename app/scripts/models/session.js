@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 import router from '../router';
+import users from '../collections/users';
 
 const Session = Backbone.Model.extend({
     urlRoot: `https://warm-brook-49316.herokuapp.com/sign-in`,
@@ -42,6 +43,7 @@ const Session = Backbone.Model.extend({
     signup: function(username, password) {
         // console.log(`new user: ${username} new password: ${password}`);
         // creating a new user model and saving it to collection (.create)
+        
     },
 
 });
