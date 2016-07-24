@@ -40,7 +40,7 @@ const SingleTruckFeed = Backbone.View.extend({
   },
 
   editFunction: function(){
-    router.navigate('edittruck', {trigger: true});
+    router.navigate(`edittruck/${this.model.get('id')}`, {trigger: true});
   },
 
   deleteFunction:  function () {
