@@ -17,7 +17,7 @@ const SingleTruckFeed = Backbone.View.extend({
 
     //need to add vote/like button if user is logged in
     if (store.session.get('username') !== '') {
-      toReturn += `<i class="fa fa-thumbs-up likeBtn"></i>`;
+      toReturn += `<i class="fa fa-thumbs-up likeBtn like"></i>`;
     }
     toReturn += `<p id="votes"> VOTES </p><input id="numberVotes" type="text" name="total-votes" value=${this.model.get('votes_count')} readonly />`;
 
