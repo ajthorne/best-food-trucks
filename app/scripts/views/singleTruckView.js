@@ -73,6 +73,7 @@ const SingleTruck = Backbone.View.extend({
     if (store.session.favorites.indexOf(this.model.get('id')) === -1){
       this.model.set('vote_count', this.model.get('vote_count') + 1);
       store.session.favorites.push(this.model.get('id'));
+      console.log("you liked this");
     } else {
       alert('You already liked this!');
     }

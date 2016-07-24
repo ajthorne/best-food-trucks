@@ -32,18 +32,29 @@ const Session = Backbone.Model.extend({
             success: (model, response) => {
                 this.unset('password');
                 window.localStorage.setItem('authtoken', response.auth_token);
-                router.navigate('truckfeed', {trigger: true});
-                console.log("YOU ARE LOGGED IN BIATCH");
+                router.navigate('truckfeed', {
+                    trigger: true
+                });
             }
 
         });
 
     },
     signup: function(username, password) {
-        // console.log(`new user: ${username} new password: ${password}`);
-        // creating a new user model and saving it to collection (.create)
-    },
-
+        this.create({
+            username: username,
+            password: password
+        }, {
+            success: (model, response) => {
+                this.unset('password');
+                window.localStorage.setItem('authtoken', response.auth_token);
+                console.log(response);
+                router.navigate('truckfeed', {
+                    trigger: true
+                });
+            }
+        });
+    }
 });
 
 export default Session;

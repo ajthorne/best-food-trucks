@@ -141,7 +141,10 @@ li {
         color: #C21613;
         font-size: 2rem;
         font-weight: bold;
-        margin-right: 7%; }
+        margin-right: 7%;
+        font-size: 2rem;
+        position: relative;
+        bottom: 7vh; }
       .single-truck .single-truck-container .single-truck-copy .single-truck-yelp:hover {
         text-decoration: underline;
         transform: scale(1.2);
