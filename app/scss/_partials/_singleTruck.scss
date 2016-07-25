@@ -1,22 +1,20 @@
 .single-truck {
     text-align: center;
-
     .single-truck-name {
         background: white;
         text-align: center;
         font-weight: bold;
-        display: inline-block;;
+        display: inline-block;
         font-size: 4rem;
         font-family: $header-font;
     }
-
     .single-truck-photo {
         width: 85%;
         height: auto;
         overflow: hidden;
     }
-
     .single-truck-container {
+        position: relative;
         padding: 3%;
         background: #F5F5F5;
         margin: 0 auto;
@@ -32,8 +30,6 @@
             span {
                 font-weight: bold;
             }
-
-
             .single-truck-yelp {
                 position: absolute;
                 right: 5%;
@@ -44,10 +40,8 @@
                 font-weight: bold;
                 margin-right: 7%;
                 font-size: 2rem;
-                position: relative;
                 bottom: 7vh;
             }
-
             .single-truck-yelp:hover {
                 text-decoration: underline;
                 transform: scale(1.2);
@@ -55,11 +49,10 @@
             }
         }
     }
-
     .likeBtn {
-      position: absolute;
-      right: 5%;
-      bottom: -10%;
-      font-size: 2rem;
+        font-size: 2rem;
+        position: relative;
+        bottom: 11vh;
+        left: 18%;
     }
 }
