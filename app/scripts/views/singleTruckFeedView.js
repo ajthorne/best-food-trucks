@@ -65,10 +65,12 @@ const SingleTruckFeed = Backbone.View.extend({
     },
 
     likeFunction: function() {
-      var newVote = new Vote(this.model.get('id'));
-      newVote.save();
-      this.$el.find('[name="total-votes"]').val(this.model.get('votes_count'));
-    },
+     // var newVote = new Vote(this.model.get('id'));
+     // newVote.save();
+     this.model.set('votes_count', this.model.get('votes_count') + 1);
+     this.$el.find('[name="total-votes"]').val(this.model.get('votes_count'));
+    //  this.model.save();
+   },
 
     render: function() {
         this.$el.html(this.template());
