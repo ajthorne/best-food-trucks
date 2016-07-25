@@ -286,6 +286,15 @@ footer {
     width: 85%; }
     .single-truck .single-truck-container .single-truck-copy {
       font-size: 1.2rem; } }
+.EditTruck {
+  width: 70%;
+  margin: 15%;
+  background: #F5F5F5;
+  opacity: .7;
+  border: 1px black solid;
+  padding: 3vh 5%;
+  margin-top: 4vh; }
+
 h1 {
   font-family: "Amatic SC", cursive; }
 
