@@ -123,6 +123,7 @@ li {
     height: auto;
     overflow: hidden; }
   .single-truck .single-truck-container {
+    position: relative;
     padding: 3%;
     background: #F5F5F5;
     margin: 0 auto;
@@ -147,17 +148,16 @@ li {
         font-weight: bold;
         margin-right: 7%;
         font-size: 2rem;
-        position: relative;
         bottom: 7vh; }
       .single-truck .single-truck-container .single-truck-copy .single-truck-yelp:hover {
         text-decoration: underline;
         transform: scale(1.2);
         cursor: url("https://d30y9cdsu7xlg0.cloudfront.net/png/2255-200.png"), auto; }
   .single-truck .likeBtn {
-    position: absolute;
-    right: 5%;
-    bottom: -10%;
-    font-size: 2rem; }
+    font-size: 2rem;
+    position: relative;
+    bottom: 11vh;
+    left: 18%; }
 
 .login-container {
   background: #F5F5F5;
@@ -254,6 +254,12 @@ footer {
   .navButton {
     font-size: 1.3rem; }
 
+  .user-login {
+    margin-left: 28%; }
+
+  .new-login {
+    margin-left: 15%; }
+
   .truck-feed h1 {
     font-size: 4rem; }
 
@@ -285,7 +291,9 @@ footer {
   .single-truck .single-truck-container {
     width: 85%; }
     .single-truck .single-truck-container .single-truck-copy {
-      font-size: 1.2rem; } }
+      font-size: 1.2rem; }
+    .single-truck .single-truck-container .single-truck-yelp {
+      font-size: 1.3rem; } }
 h1 {
   font-family: "Amatic SC", cursive; }
 
