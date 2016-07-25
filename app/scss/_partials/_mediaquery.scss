@@ -3,6 +3,15 @@
     .navButton {
         font-size: 1.3rem;
     }
+
+    .user-login {
+      margin-left: 28%;
+    }
+
+    .new-login{
+        margin-left: 15%;
+      }
+
     .truck-feed h1 {
         font-size: 4rem;
     }
@@ -28,6 +37,7 @@
         font-weight: 900;
         font-family: $header-font;
     }
+
     footer {
         .copyright {
             vertical-align: inherit;
@@ -40,6 +50,10 @@
         width: 85%;
         .single-truck-copy {
             font-size: 1.2rem;
+            }
+
+            .single-truck-yelp {
+                font-size: 1.3rem;
             }
       }
     }

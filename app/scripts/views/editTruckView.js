@@ -67,6 +67,7 @@ const EditTruck = Backbone.View.extend({
     this.model.set('cuisine', this.$el.find('.cuisine').val());
     this.model.set('signature_item', this.$el.find(`[name='signature']`).val());
     this.model.set('comment', this.$el.find(`[name='comment']`).val());
+    this.model.save();
     router.navigate('truckfeed', {trigger: true});
   }
 });
